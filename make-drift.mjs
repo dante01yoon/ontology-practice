@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const src = new URL('knowledge/ontology.md', import.meta.url), dst = new URL('knowledge/ontology-stale.md', import.meta.url);
 let n = 0;
 const out = fs.readFileSync(src, 'utf8').split('\n').map((l) => {
-  if (n || !l.includes('30일권')) return l;
+  if (n || !/30일/.test(l) || !/5,?000/.test(l)) return l;
   return l.replace(/5,000|5000/, (m) => { n++; return m.includes(',') ? '4,000' : '4000'; });
 }).join('\n');
 if (n !== 1) throw new Error('30일권 1시간권 가격 줄을 찾지 못함 — ontology.md 모양을 확인');

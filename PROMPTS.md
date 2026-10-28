@@ -14,3 +14,9 @@ knowledge/source.md를 읽고 따릉이 요금 온톨로지를 knowledge/ontolog
 ```
 따릉이 요금 계산 모듈 fare.js 만들어 줘. 함수 세 개: price(이용권ID), extraFee(이용권ID, 분), canBuy(이용권ID, 회원여부). 이용권ID는 "일일권-1시간", "30일권-2시간" 같은 모양이야.
 ```
+
+## 4. 가리키기로 고치기 (클로드 코드)
+```
+knowledge/PRD.md와 SDD.md를 고쳐서 knowledge/linked/에 새로 써 줘. ontology.md와 겹치는 가격표와 규칙은 지우고 R 번호로 가리키게.
+```
+그다음 `node run.mjs linked` → `node report.mjs`

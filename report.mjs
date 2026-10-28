@@ -1,7 +1,7 @@
 // runs/results.jsonl → 조건별 평균표
 import fs from 'node:fs';
 const rows = fs.readFileSync(new URL('runs/results.jsonl', import.meta.url), 'utf8').trim().split('\n').map(JSON.parse);
-const LABEL = { base: '과제만', onto: '+온톨로지', spec: '+PRD·SDD', both: '+둘 다', drift: '+둘 다(어긋남)', check: '+PRD·SDD+검사' };
+const LABEL = { base: '과제만', onto: '+온톨로지', spec: '+PRD·SDD', both: '+둘 다', drift: '+둘 다(어긋남)', check: '+PRD·SDD+검사', linked: '+둘 다(가리키기)' };
 const avg = (a) => a.reduce((s, x) => s + x, 0) / a.length;
 console.log('조건'.padEnd(16), '정답률', '  비용($)', ' 시간(초)', ' 턴', ' 회');
 for (const [k, label] of Object.entries(LABEL)) {

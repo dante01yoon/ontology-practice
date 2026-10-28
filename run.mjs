@@ -15,6 +15,7 @@ const CONDITIONS = {
   spec: { files: [K('PRD.md'), K('SDD.md')], claude: '요구사항은 PRD.md, 설계는 SDD.md에 있다.' },
   both: { files: [K('ontology.md'), K('PRD.md'), K('SDD.md')], claude: '도메인 지식은 ontology.md, 요구사항은 PRD.md, 설계는 SDD.md에 있다.' },
   drift: { files: [K('ontology-stale.md'), K('PRD.md'), K('SDD.md')], claude: '도메인 지식은 ontology.md, 요구사항은 PRD.md, 설계는 SDD.md에 있다.', rename: { 'ontology-stale.md': 'ontology.md' } },
+  linked: { files: [K('ontology.md'), K('linked/PRD.md'), K('linked/SDD.md')], claude: '도메인 지식은 ontology.md, 요구사항은 PRD.md, 설계는 SDD.md에 있다.' },
   check: { files: [K('PRD.md'), K('SDD.md')], claude: '요구사항은 PRD.md, 설계는 SDD.md에 있다.\n끝내기 전에 `npm test`를 돌려 모두 통과해야 한다.', tests: true },
 };
 
